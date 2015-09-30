@@ -1,0 +1,23 @@
+Alex Gould
+9/15/15
+20 Minutes
+I did not look at any available solutions to any of these exercises.
+
+Multiplex
+---------
+
+Same as the mutex solution, have each thread wait for a common semaphore, then
+signal that same semaphore when it's done. But while Mutex involved us setting
+the semaphore to 1, allowing only 1 thread in at a time, we can set the initial
+value of the semaphore to the amount of threads we're comfortable with running
+concurrently, and the solution remains virtually identical.
+
+Barrier
+-------
+In order to do this, we need to have a global variable keeping track of how many
+threads have reached their rendezvous points. Each thread atomically increments
+the variable when it reaches the rendezvous point, and should the variable equal
+the number of threads, it can then signal a common semaphore. Regardless of
+whether the signal was sent or not, it then waits for the semaphore to keep
+going. Assuming the semaphore lets it pass, it has to signal it one more time to
+reset the variable so the other threads can see it's OK to go.
