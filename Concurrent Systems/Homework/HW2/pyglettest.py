@@ -16,4 +16,5 @@ def playSounds(instrument, notes):
 
 if __name__ == '__main__':
 	#playSounds("./media/6th_String_E_64kb.wav", "1x232xx11")
-	playSounds("./media/3rd_String_G_64kb.wav", "314159265358979")
+	#playSounds("./media/3rd_String_G_64kb.wav", "314159265358979")
+	playSounds("./media/6th_String_E_64kb.wav", "x2x3xx2xxxxxx2xxxxxxxxxxxxx2xx2xx2x2xxxxxxx")

@@ -1,3 +1,6 @@
+# Read data from file and play it
+
+import sys
 from pyglet import media
 from time import sleep
 
@@ -5,7 +8,7 @@ def playSounds(instrument, notes):
 	sound = media.load(instrument, streaming=False)
 	pitch = 0
 	for c in notes:
-		if c != "x":
+		if c.isdigit():
 			player = media.Player()
 			player.queue(sound)
 			player.pitch = (2.0**(float(c)/12))
@@ -14,6 +17,10 @@ def playSounds(instrument, notes):
 			player.play()
 			sleep(2)
 
+def main(argv):
+	with open(argv[1]) as f:
+		for line in f:
+			playSounds(line.split(" ")[0], line.split(" ")[1])
+
 if __name__ == '__main__':
-	#playSounds("./media/6th_String_E_64kb.wav", "1x232xx11")
-	playSounds("./media/3rd_String_G_64kb.wav", "314159265358979")
+	main(sys.argv)
