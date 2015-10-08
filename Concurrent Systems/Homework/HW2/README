@@ -1,8 +1,17 @@
-Name:
-Date:
-Approximate time assignment took you:
-List of collaborators:
+Name: Alexander Gould
+Date: 9/29/15
+Approximate time assignment took you: 2 Days
+List of collaborators: I got help from the Reusable Barrier puzzle solution, and
+talked about image manipulation for a few minutes with Arthur Berman.
 
 Instructions on running image_transform.py
+python image_transform.py input_image output_image transform_function [n_v n_h]
+
+(n_v is the number of vertical segments to run in different threads, n_h is the
+number of horizontal cuts)
 
 Instructions on running rockband.py
+python rockband[1].py data_file.txt
+
+(This code was built on OSX, and seemed to run well on the one Linux machine I
+tested it on. If it behaves irregularly, please let me know!)
