@@ -3,7 +3,7 @@
 %% COMP50CP - Mark Sheldon
 
 -module(ps03).
--export([is_homogeneous/1, get_roots/3]).
+-export([is_homogeneous/1, get_roots/3, ints_from_to/2]).
 
 is_homogeneous([]) -> true;
 is_homogeneous([H|T]) -> is_homogeneous(H,T).
@@ -22,3 +22,8 @@ get_roots_help(A,B,D) when D > 0 ->
     S = math:sqrt(D),
     [(-B+S)/(2*A),(-B-S)/(2*A)];
 get_roots_help(_,_,_) -> [].
+
+%%%%%%%%%
+
+ints_from_to(Lo,Lo) -> [];
+ints_from_to(Lo,Hi) -> ints_from_to(Lo,Hi-1) ++ [Hi-1].
